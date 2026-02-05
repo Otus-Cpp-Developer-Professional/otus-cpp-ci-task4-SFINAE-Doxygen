@@ -101,6 +101,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a325cdb1b5eb253adf400f434b0b1bc96" id="r_a325cdb1b5eb253adf400f434b0b1bc96"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">typename</a> <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt; </td></tr>
 <tr class="memitem:a325cdb1b5eb253adf400f434b0b1bc96"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy__enable__if.html">my_enable_if</a>&lt; <a class="el" href="structmy__is__container.html">my_is_container</a>&lt; <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt;::value &amp;&amp;!<a class="el" href="structmy__is__string.html">my_is_string</a>&lt; <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__container_8hpp.html#a325cdb1b5eb253adf400f434b0b1bc96">print_ip</a> (<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">const</a> <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &amp;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">c</a>)</td></tr>
+<tr class="memdesc:a325cdb1b5eb253adf400f434b0b1bc96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print conditional IP address from a container.  <br /></td></tr>
 <tr class="separator:a325cdb1b5eb253adf400f434b0b1bc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -121,6 +122,24 @@ template&lt;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7b
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Print conditional IP address from a container. </p>
+<p>Enabled only for container types (std::vector, std::list, etc.) excluding strings. Prints all elements of the container separated by dots (<code>.</code>), preserving element order.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Container with IP elements</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Container elements are printed as-is. </dd>
+<dd>
+String types are explicitly excluded by SFINAE. </dd></dl>
 
 </div>
 </div>

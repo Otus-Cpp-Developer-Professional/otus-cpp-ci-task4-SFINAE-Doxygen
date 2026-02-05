@@ -87,15 +87,16 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../meta/enable_if.hpp&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../traits/is_string.hpp&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">typename</span> <a class="code hl_struct" href="structmy__enable__if.html">my_enable_if&lt;my_is_string&lt;T&gt;::value</a>&gt;::type</div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">    9</a></span><a class="code hl_function" href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">print_ip</a>(<span class="keyword">const</span> T&amp; s)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    std::cout &lt;&lt; s &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">typename</span> <a class="code hl_struct" href="structmy__enable__if.html">my_enable_if&lt;my_is_string&lt;T&gt;::value</a>&gt;::type</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">   21</a></span><a class="code hl_function" href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">print_ip</a>(<span class="keyword">const</span> T&amp; s)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    std::cout &lt;&lt; s &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
 </div>
-<div class="ttc" id="aprint__string_8hpp_html_a0250a9d58de2e5d4b8d0c67d0366f0b7"><div class="ttname"><a href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">print_ip</a></div><div class="ttdeci">my_enable_if&lt; my_is_string&lt; T &gt;::value &gt;::type print_ip(const T &amp;s)</div><div class="ttdef"><b>Definition</b> print_string.hpp:9</div></div>
+<div class="ttc" id="aprint__string_8hpp_html_a0250a9d58de2e5d4b8d0c67d0366f0b7"><div class="ttname"><a href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">print_ip</a></div><div class="ttdeci">my_enable_if&lt; my_is_string&lt; T &gt;::value &gt;::type print_ip(const T &amp;s)</div><div class="ttdoc">Print conditional IP address from a string.</div><div class="ttdef"><b>Definition</b> print_string.hpp:21</div></div>
 <div class="ttc" id="astructmy__enable__if_html"><div class="ttname"><a href="structmy__enable__if.html">my_enable_if</a></div><div class="ttdef"><b>Definition</b> enable_if.hpp:4</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -99,6 +99,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a0250a9d58de2e5d4b8d0c67d0366f0b7" id="r_a0250a9d58de2e5d4b8d0c67d0366f0b7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">typename</a> <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt; </td></tr>
 <tr class="memitem:a0250a9d58de2e5d4b8d0c67d0366f0b7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy__enable__if.html">my_enable_if</a>&lt; <a class="el" href="structmy__is__string.html">my_is_string</a>&lt; <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__string_8hpp.html#a0250a9d58de2e5d4b8d0c67d0366f0b7">print_ip</a> (<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">const</a> <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &amp;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">s</a>)</td></tr>
+<tr class="memdesc:a0250a9d58de2e5d4b8d0c67d0366f0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print conditional IP address from a string.  <br /></td></tr>
 <tr class="separator:a0250a9d58de2e5d4b8d0c67d0366f0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -119,6 +120,21 @@ template&lt;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7b
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Print conditional IP address from a string. </p>
+<p>Enabled only for string types. The value is printed exactly as provided, without any parsing or validation.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>String type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>IP address represented as a string </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

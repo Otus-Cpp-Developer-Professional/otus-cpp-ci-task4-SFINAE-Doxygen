@@ -89,19 +89,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../traits/tuple_all_integral.hpp&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../tuple/tuple_print.hpp&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">typename</span> <a class="code hl_struct" href="structmy__enable__if.html">my_enable_if&lt;my_tuple_all_integral&lt;T&gt;::value</a>&gt;::type</div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">   11</a></span><a class="code hl_function" href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">print_ip</a>(<span class="keyword">const</span> T&amp; t)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::ostringstream ss;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">append_tuple_dotted&lt;0&gt;</a>(<a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">t</a>, <a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">ss</a>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::cout &lt;&lt; <a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">ss</a>.str() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">typename</span> <a class="code hl_struct" href="structmy__enable__if.html">my_enable_if&lt;my_tuple_all_integral&lt;T&gt;::value</a>&gt;::type</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">   26</a></span><a class="code hl_function" href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">print_ip</a>(<span class="keyword">const</span> T&amp; t)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::ostringstream ss;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">append_tuple_dotted&lt;0&gt;</a>(<a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">t</a>, <a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">ss</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::cout &lt;&lt; <a class="code hl_function" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">ss</a>.str() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="ttc" id="aprint__tuple_8hpp_html_a3213902993d4896b48893af8660bac72"><div class="ttname"><a href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">print_ip</a></div><div class="ttdeci">my_enable_if&lt; my_tuple_all_integral&lt; T &gt;::value &gt;::type print_ip(const T &amp;t)</div><div class="ttdef"><b>Definition</b> print_tuple.hpp:11</div></div>
+<div class="ttc" id="aprint__tuple_8hpp_html_a3213902993d4896b48893af8660bac72"><div class="ttname"><a href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">print_ip</a></div><div class="ttdeci">my_enable_if&lt; my_tuple_all_integral&lt; T &gt;::value &gt;::type print_ip(const T &amp;t)</div><div class="ttdoc">Print conditional IP address from a tuple.</div><div class="ttdef"><b>Definition</b> print_tuple.hpp:26</div></div>
 <div class="ttc" id="astructmy__enable__if_html"><div class="ttname"><a href="structmy__enable__if.html">my_enable_if</a></div><div class="ttdef"><b>Definition</b> enable_if.hpp:4</div></div>
-<div class="ttc" id="atuple__print_8hpp_html_a8c53141fb64a8941b0a7aa7be99bc39a"><div class="ttname"><a href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">append_tuple_dotted</a></div><div class="ttdeci">void append_tuple_dotted(const Tuple &amp;t, std::ostringstream &amp;out)</div><div class="ttdef"><b>Definition</b> tuple_print.hpp:6</div></div>
+<div class="ttc" id="atuple__print_8hpp_html_a8c53141fb64a8941b0a7aa7be99bc39a"><div class="ttname"><a href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">append_tuple_dotted</a></div><div class="ttdeci">void append_tuple_dotted(const Tuple &amp;t, std::ostringstream &amp;out)</div><div class="ttdoc">Append tuple elements to stream separated by dots.</div><div class="ttdef"><b>Definition</b> tuple_print.hpp:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -5,7 +5,7 @@ digraph "tuple_all_integral_impl&lt; Tuple, I, std::enable_if_t&lt;(I&lt; std::t
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [id="Node000001",label="tuple_all_integral\l_impl\< Tuple, I, std\l::enable_if_t\<(I\< std\l::tuple_size_v\< Tuple \>)\> \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="tuple_all_integral\l_impl\< Tuple, I, std\l::enable_if_t\<(I\< std\l::tuple_size_v\< Tuple \>)\> \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Recursive case for tuple element checking."];
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="my_bool_constant\< my\l_is_integral\< std::tuple\l_element_t\< I, Tuple \> \>\l::value &&tuple_all_integral\l_impl\< Tuple, I+1 \>::value \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structmy__bool__constant.html",tooltip=" "];
 }

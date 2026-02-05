@@ -45,7 +45,7 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node19 [id="edge19_Node000000_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="my_is_tuple\< T, my\l_void_t\< decltype(std\l::tuple_size\< T \>::value)\> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structmy__is__tuple_3_01T_00_01my__void__t_3_01decltype_07std_1_1tuple__size_3_01T_01_4_1_1value_08_4_01_4.html",tooltip=" "];
   Node0 -> Node20 [id="edge20_Node000000_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="my_tuple_all_integral\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structmy__tuple__all__integral.html",tooltip=" "];
+  Node20 [id="Node000020",label="my_tuple_all_integral\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structmy__tuple__all__integral.html",tooltip="Trait to determine whether all tuple element types are integral."];
   Node0 -> Node21 [id="edge21_Node000000_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="tuple_all_integral\l_impl\< Tuple, I, std\l::enable_if_t\< I==std\l::tuple_size_v\< Tuple \> \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtuple__all__integral__impl_3_01Tuple_00_01I_00_01std_1_1enable__if__t_3_01I_0a_0astd_1_1tu3855dae327c95527c1a7049b2ba473df.html",tooltip=" "];
+  Node21 [id="Node000021",label="tuple_all_integral\l_impl\< Tuple, I, std\l::enable_if_t\< I==std\l::tuple_size_v\< Tuple \> \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtuple__all__integral__impl_3_01Tuple_00_01I_00_01std_1_1enable__if__t_3_01I_0a_0astd_1_1tu3855dae327c95527c1a7049b2ba473df.html",tooltip="Terminal case for tuple recursion."];
 }

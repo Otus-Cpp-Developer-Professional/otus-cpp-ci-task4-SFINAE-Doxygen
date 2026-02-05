@@ -78,6 +78,9 @@ $(function() {
   <div class="headertitle"><div class="title">tuple_print.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Helper for printing tuple elements separated by dots.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -97,9 +100,14 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a8c53141fb64a8941b0a7aa7be99bc39a" id="r_a8c53141fb64a8941b0a7aa7be99bc39a"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename Tuple &gt; </td></tr>
 <tr class="memitem:a8c53141fb64a8941b0a7aa7be99bc39a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">append_tuple_dotted</a> (const Tuple &amp;t, std::ostringstream &amp;out)</td></tr>
+<tr class="memdesc:a8c53141fb64a8941b0a7aa7be99bc39a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append tuple elements to stream separated by dots.  <br /></td></tr>
 <tr class="separator:a8c53141fb64a8941b0a7aa7be99bc39a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Helper for printing tuple elements separated by dots. </p>
+<p>Provides a recursive compile-time function to append tuple elements to an output stream, separating them with a dot (<code>.</code>).</p>
+<p>The implementation uses <code>if constexpr</code> to terminate recursion at compile time and avoids runtime branching. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a8c53141fb64a8941b0a7aa7be99bc39a" name="a8c53141fb64a8941b0a7aa7be99bc39a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c53141fb64a8941b0a7aa7be99bc39a">&#9670;&#160;</a></span>append_tuple_dotted()</h2>
 
@@ -127,6 +135,24 @@ template&lt;std::size_t I, typename Tuple &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Append tuple elements to stream separated by dots. </p>
+<p>Recursively processes tuple elements starting from index <code>I</code> and appends them to the given output stream. A dot (<code>.</code>) is inserted between elements.</p>
+<p>Recursion is resolved entirely at compile time using <code>if constexpr</code> and template instantiation.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">I</td><td>Current tuple index </td></tr>
+    <tr><td class="paramname">Tuple</td><td>Tuple type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Tuple whose elements are appended </td></tr>
+    <tr><td class="paramname">out</td><td>Output stream to append the elements to </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

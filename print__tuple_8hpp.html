@@ -101,6 +101,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a3213902993d4896b48893af8660bac72" id="r_a3213902993d4896b48893af8660bac72"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">typename</a> <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt; </td></tr>
 <tr class="memitem:a3213902993d4896b48893af8660bac72"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy__enable__if.html">my_enable_if</a>&lt; <a class="el" href="structmy__tuple__all__integral.html">my_tuple_all_integral</a>&lt; <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="print__tuple_8hpp.html#a3213902993d4896b48893af8660bac72">print_ip</a> (<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">const</a> <a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">T</a> &amp;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7be99bc39a">t</a>)</td></tr>
+<tr class="memdesc:a3213902993d4896b48893af8660bac72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print conditional IP address from a tuple.  <br /></td></tr>
 <tr class="separator:a3213902993d4896b48893af8660bac72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -121,6 +122,22 @@ template&lt;<a class="el" href="tuple__print_8hpp.html#a8c53141fb64a8941b0a7aa7b
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Print conditional IP address from a tuple. </p>
+<p>Enabled only for tuple types whose all element types are integral. The tuple elements are printed in order and separated by dots (<code>.</code>).</p>
+<p>Type validation is performed at compile time using a custom SFINAE-based trait. If the tuple contains non-integral elements, the function is excluded from overload resolution.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tuple type with all elements being integral </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Tuple representing the conditional IP address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

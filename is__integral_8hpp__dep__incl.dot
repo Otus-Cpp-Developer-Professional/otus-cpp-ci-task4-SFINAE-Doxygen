@@ -12,7 +12,7 @@ digraph "include/traits/is_integral.hpp"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="main.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="include/traits/tuple\l_all_integral.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$tuple__all__integral_8hpp.html",tooltip=" "];
+  Node5 [id="Node000005",label="include/traits/tuple\l_all_integral.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$tuple__all__integral_8hpp.html",tooltip="Compile-time trait to check that all tuple elements are integral."];
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="include/print/print\l_tuple.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$print__tuple_8hpp.html",tooltip=" "];
   Node6 -> Node3 [id="edge6_Node000006_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];

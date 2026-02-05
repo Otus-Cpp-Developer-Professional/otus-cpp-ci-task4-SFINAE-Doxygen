@@ -6,13 +6,20 @@
 #include "../traits/is_integral.hpp"
 
 /**
- * @brief Print conditional IP address
+ * @brief Prints a conditional IP address from an integral value
  *
- * Prints IP representation depending on input type.
+ * This overload is enabled only for integral types using a custom SFINAE
+ * mechanism. The value is interpreted as a sequence of bytes and printed
+ * in unsigned form, starting from the most significant byte.
  *
- * @tparam T Input type
- * @param value IP value
+ * Each byte is separated by a dot (`.`), similarly to a traditional
+ * IP address representation. The number of printed elements depends
+ * on the size of the input type.
+ *
+ * @tparam T Integral input type
+ * @param ip Integral value representing the conditional IP address
  */
+
 
 
 template<typename T>

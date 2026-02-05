@@ -23,9 +23,14 @@ jobs:
       - run: cmake --build . --target test
       - run: cmake --build . --target package
       - name: Install Doxygen
-        run: sudo apt-get install -y doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen
       - name: Generate Doxygen
         run: doxygen Doxyfile
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

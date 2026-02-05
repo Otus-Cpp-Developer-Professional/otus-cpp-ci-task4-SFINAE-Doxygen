@@ -5,6 +5,16 @@
 #include "../meta/enable_if.hpp"
 #include "../traits/is_integral.hpp"
 
+/**
+ * @brief Print conditional IP address
+ *
+ * Prints IP representation depending on input type.
+ *
+ * @tparam T Input type
+ * @param value IP value
+ */
+
+
 template<typename T>
 typename my_enable_if<my_is_integral<T>::value>::type
 print_ip(T ip)

@@ -1,19 +1,18 @@
-## Task 1 — Build and Package Publishing
+## Task 4 Conditional IP Printer
 
-This repository is created to complete **Task 1**, which focuses on building a simple C++ project and setting up an automated build farm using **GitHub Actions**.
+This project implements a function for printing a conditional IP address using template overloading and SFINAE.
 
-The project contains a program that prints the following output to the console:
+Supported input types:
 
-build N  
-Hello, World!
+integral types (printed byte-wise, from most significant byte)
 
-where **N** is the current build number.
+strings (printed as-is)
 
-During the build stage, automated tests are executed to validate the build/version number.
+std::vector and std::list (elements separated by .)
 
-A GitHub Actions workflow is configured to:
-- automatically build the project on every commit,
-- run tests during the build stage,
-- publish build artifacts,
-- automatically create a release either on each commit or when a Git tag is created.
-# otus-cpp-ci-task4-SFINAE-Doxygen
+(optional) std::tuple with identical element types (checked at compile time)
+
+All type traits, overload resolution logic, and SFINAE mechanisms are implemented manually for educational purposes.
+The standard library type traits and helpers were intentionally not used to better understand how these mechanisms work internally.
+
+The project also includes Doxygen integration for documentation generation.

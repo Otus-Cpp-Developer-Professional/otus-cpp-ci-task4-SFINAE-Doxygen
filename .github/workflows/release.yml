@@ -22,6 +22,10 @@ jobs:
       - run: cmake --build .
       - run: cmake --build . --target test
       - run: cmake --build . --target package
+      - name: Install Doxygen
+        run: sudo apt-get install -y doxygen
+      - name: Generate Doxygen
+        run: doxygen Doxyfile
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

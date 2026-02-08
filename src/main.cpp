@@ -2,7 +2,7 @@
 #include <list>
 #include <tuple>
 
-#include "include/../print_ip.hpp"
+#include "print_ip.hpp"
 
 /**
  * @brief Example usage of the print_ip library

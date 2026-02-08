@@ -9,6 +9,7 @@ on:
       - main
       - master
       - feature/github_actions
+    workflow_dispatch:
 
 jobs:
   build:
@@ -57,6 +58,13 @@ jobs:
       - name: Generate Doxygen documentation
         run: |
           doxygen Doxyfile
+            - name: Deploy Doxygen to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: docs/html
+          force_orphan: true
 
       - name: Create Release
         id: create_release

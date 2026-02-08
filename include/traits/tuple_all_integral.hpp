@@ -1,85 +1,82 @@
 #pragma once
 /**
  * @file tuple_all_integral.hpp
- * @brief Compile-time trait to check that all tuple elements are integral
+ * @brief Compile-time trait to check that all elements of a std::tuple are integral
  *
- * Provides a custom type trait that evaluates to true if and only if
- * all element types of a given std::tuple are integral.
+ * This header defines a custom type trait that evaluates to `true`
+ * if and only if:
  *
- * The implementation is based on recursive template instantiation and
- * SFINAE techniques and is intentionally written without using standard
- * library type traits for educational purposes.
+ *   1. The given type is a `std::tuple`
+ *   2. The tuple is NOT empty
+ *   3. All element types of the tuple are integral
+ *
+ * For any non-tuple type, or for an empty tuple, the trait evaluates to `false`.
+ *
+ * The implementation intentionally avoids recursion, `std::enable_if`,
+ * and `std::tuple_size`-based SFINAE, and instead relies on:
+ *
+ *   - Partial specialization for `std::tuple`
+ *   - Fold expressions (C++17)
+ *
+ * This makes the trait:
+ *   - simpler
+ *   - safer
+ *   - easier to reason about
+ *   - impossible to accidentally apply to non-tuple types
  */
 
 #include <tuple>
-#include <type_traits>
+
 #include "../meta/bool_constant.hpp"
-#include "../meta/void_t.hpp"
 #include "is_integral.hpp"
 
 /**
- * @brief Recursive helper to check tuple element types
+ * @brief Primary template: false for all non-tuple types
  *
- * Iterates over tuple elements at compile time and verifies that each
- * element type is integral.
- *
- * @tparam Tuple Tuple type being checked
- * @tparam I Current element index
+ * This is the default case. Any type that is not explicitly specialized
+ * below will be treated as "not a tuple of integral types".
  */
-
-template<typename Tuple, std::size_t I, typename = void>
-struct tuple_all_integral_impl;
-
-/**
- * @brief Terminal case for tuple recursion
- *
- * Reached when the index equals the tuple size.
- * Indicates that all previous element types were integral.
- */
-
-template<typename Tuple, std::size_t I>
-struct tuple_all_integral_impl<
-        Tuple, I,
-        std::enable_if_t<I == std::tuple_size_v<Tuple>>
-> : my_true_type {};
-
-/**
- * @brief Recursive case for tuple element checking
- *
- * Checks whether the current element type is integral and continues
- * recursion with the next tuple index.
- */
-
-template<typename Tuple, std::size_t I>
-struct tuple_all_integral_impl<
-        Tuple, I,
-        std::enable_if_t<(I < std::tuple_size_v<Tuple>)>
-> : my_bool_constant<
-        my_is_integral<std::tuple_element_t<I, Tuple>>::value &&
-        tuple_all_integral_impl<Tuple, I + 1>::value
-> {};
-
-/**
- * @brief Trait to determine whether all tuple element types are integral
- *
- * Evaluates to my_true_type if the given type is a std::tuple and all
- * its element types are integral. Otherwise evaluates to my_false_type.
- *
- * @tparam T Type to be checked
- */
-
-template<typename T, typename = void>
+template<typename T>
 struct my_tuple_all_integral : my_false_type {};
 
 /**
- * @brief Specialization enabled for tuple types
+ * @brief Specialization for std::tuple
  *
- * Uses detection of std::tuple_size to ensure that the type is a tuple,
- * then delegates the check to the recursive implementation.
+ * This specialization is selected ONLY when the type is exactly
+ * `std::tuple<Ts...>`.
+ *
+ * The condition checks:
+ *   - The tuple is not empty (`sizeof...(Ts) > 0`)
+ *   - All element types are integral
+ *
+ * The fold expression:
+ *
+ *     (my_is_integral_v<Ts> && ...)
+ *
+ * expands to:
+ *     my_is_integral_v<T1> && my_is_integral_v<T2> && ...
+ *
+ * For an empty parameter pack, a fold expression would evaluate to `true`
+ * (vacuous truth), so we explicitly forbid empty tuples.
  */
+template<typename... Ts>
+struct my_tuple_all_integral<std::tuple<Ts...>>
+        : my_bool_constant<
+                (sizeof...(Ts) > 0) &&
+                (my_is_integral_v<Ts> && ...)
+        >
+{};
 
+/**
+ * @brief Convenience variable template
+ *
+ * Allows usage like:
+ *
+ *     my_tuple_all_integral_v<T>
+ *
+ * instead of:
+ *
+ *     my_tuple_all_integral<T>::value
+ */
 template<typename T>
-struct my_tuple_all_integral<
-        T,
-        my_void_t<decltype(std::tuple_size<T>::value)>
-> : tuple_all_integral_impl<T, 0> {};
+inline constexpr bool my_tuple_all_integral_v = my_tuple_all_integral<T>::value;

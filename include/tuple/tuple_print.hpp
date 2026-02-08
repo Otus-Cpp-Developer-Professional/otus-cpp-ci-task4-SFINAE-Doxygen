@@ -11,8 +11,6 @@
  * instantiation based on std::tuple_size.
  */
 
-
-
 #include <tuple>
 #include <sstream>
 

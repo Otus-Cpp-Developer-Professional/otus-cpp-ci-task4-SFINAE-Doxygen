@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../meta/enable_if.hpp"
 #include "../traits/is_tuple.hpp"
+#include "../traits/is_container.hpp"
 #include "../traits/tuple_all_integral.hpp"
 #include "../tuple/tuple_print.hpp"
 
@@ -20,12 +21,26 @@
  * @param t Tuple representing the conditional IP address
  */
 
-
 template<typename T>
-typename my_enable_if<my_tuple_all_integral<T>::value>::type
-print_ip(const T& t)
+my_enable_if_t<
+        my_tuple_all_integral_v<T>,
+        std::string
+>
+to_string_ip(const T& t)
 {
     std::ostringstream os;
     append_tuple_dotted<0>(t, os);
-    std::cout << os.str() << '\n';
+    return os.str();
 }
+
+template<typename T>
+my_enable_if_t<
+        my_tuple_all_integral_v<T>,
+        void
+>
+print_ip(const T& t)
+{
+    std::cout << to_string_ip(t) << '\n';
+}
+
+

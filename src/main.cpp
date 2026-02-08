@@ -1,14 +1,26 @@
-#include "lib.h"
-
 #include <vector>
 #include <list>
 #include <tuple>
 
-#include "include/print_ip.hpp"
+#include "include/../print_ip.hpp"
+
+/**
+ * @brief Example usage of the print_ip library
+ *
+ * This file demonstrates how the print_ip function can be used
+ * with different supported types:
+ *  - integral types
+ *  - strings
+ *  - standard containers
+ *  - tuples of integral values
+ *
+ * The file is not part of the library itself and is provided
+ * for demonstration purposes only.
+ */
+
 
 int main()
 {
-    std::cout << "Version: " << version() << std::endl;
 
     print_ip( int8_t{-1} ); // 255;
     print_ip( int16_t{0} ); // 0.0

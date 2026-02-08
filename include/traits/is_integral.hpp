@@ -16,3 +16,6 @@ template<> struct my_is_integral<long> : my_true_type {};
 template<> struct my_is_integral<unsigned long> : my_true_type {};
 template<> struct my_is_integral<long long> : my_true_type {};
 template<> struct my_is_integral<unsigned long long> : my_true_type {};
+
+template<typename T>
+inline constexpr bool my_is_integral_v = my_is_integral<T>::value;

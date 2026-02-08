@@ -14,3 +14,6 @@ struct my_is_container<T,
                 typename T::value_type
         >
 > : my_true_type {};
+
+template<typename T>
+inline constexpr bool my_is_container_v = my_is_container<T>::value;

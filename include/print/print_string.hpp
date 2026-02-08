@@ -17,8 +17,15 @@
 
 
 template<typename T>
-typename my_enable_if<my_is_string<T>::value>::type
+my_enable_if_t<my_is_string_v<T>, std::string>
+to_string_ip(const T& s)
+{
+    return s;
+}
+
+template<typename T>
+my_enable_if_t<my_is_string_v<T>, void>
 print_ip(const T& s)
 {
-    std::cout << s << '\n';
+    std::cout << to_string_ip(s) << '\n';
 }

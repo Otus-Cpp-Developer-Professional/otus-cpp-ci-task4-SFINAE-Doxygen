@@ -4,6 +4,7 @@
 #include <type_traits>
 #include "../meta/enable_if.hpp"
 #include "../traits/is_integral.hpp"
+#include "../traits/is_string.hpp"
 
 /**
  * @brief Prints a conditional IP address from an integral value
@@ -21,10 +22,9 @@
  */
 
 
-
 template<typename T>
-typename my_enable_if<my_is_integral<T>::value>::type
-print_ip(T ip)
+my_enable_if_t<my_is_integral_v<T>  && !my_is_string_v<T>, std::string>
+to_string_ip(T ip)
 {
     using U = std::make_unsigned_t<T>;
     U u = static_cast<U>(ip);
@@ -34,5 +34,13 @@ print_ip(T ip)
         ss << ((u >> (i * 8)) & 0xFF);
         if (i) ss << '.';
     }
-    std::cout << ss.str() << '\n';
+    return ss.str();
+}
+
+template<typename T>
+my_enable_if_t<
+        my_is_integral_v<T> && !my_is_string_v<T>, void
+> print_ip(const T& c)
+{
+    std::cout << to_string_ip(c) << '\n';
 }

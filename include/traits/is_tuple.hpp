@@ -10,3 +10,6 @@ template<typename T>
 struct my_is_tuple<T,
         my_void_t<decltype(std::tuple_size<T>::value)>
 > : my_true_type {};
+
+template<typename T>
+inline constexpr bool my_is_tuple_v = my_is_tuple<T>::value;

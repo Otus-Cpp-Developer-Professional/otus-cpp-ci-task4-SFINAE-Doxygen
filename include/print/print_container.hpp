@@ -23,10 +23,10 @@
 
 
 template<typename T>
-typename my_enable_if<
-        my_is_container<T>::value && !my_is_string<T>::value
->::type
-print_ip(const T& c)
+my_enable_if_t<
+    my_is_container_v<T> && !my_is_string_v<T>, std::string
+>
+to_string_ip(const T& c)
 {
     std::ostringstream ss;
     for (auto it = c.begin(); it != c.end(); ++it) {
@@ -34,5 +34,13 @@ print_ip(const T& c)
         if (std::next(it) != c.end())
             ss << '.';
     }
-    std::cout << ss.str() << '\n';
+    return ss.str();
+}
+
+template<typename T>
+my_enable_if_t<
+        my_is_container_v<T> && !my_is_string_v<T>, void
+> print_ip(const T& c)
+{
+    std::cout << to_string_ip(c) << '\n';
 }

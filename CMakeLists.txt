@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(CPACK_PACKAGE_NAME "sfinae")
+set(CPACK_PACKAGE_VENDOR "OTUS")
+set(CPACK_PACKAGE_CONTACT "sagge14@yandex.ru")
+
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 
 project(sfinae VERSION 0.0.${PATCH_VERSION} LANGUAGES CXX)

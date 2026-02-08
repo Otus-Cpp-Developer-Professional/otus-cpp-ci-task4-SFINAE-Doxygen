@@ -10,12 +10,12 @@
  * SFINAE techniques and is intentionally written without using standard
  * library type traits for educational purposes.
  */
+
 #include <tuple>
 #include <type_traits>
 #include "../meta/bool_constant.hpp"
 #include "../meta/void_t.hpp"
 #include "is_integral.hpp"
-
 
 /**
  * @brief Recursive helper to check tuple element types
@@ -30,14 +30,12 @@
 template<typename Tuple, std::size_t I, typename = void>
 struct tuple_all_integral_impl;
 
-
 /**
  * @brief Terminal case for tuple recursion
  *
  * Reached when the index equals the tuple size.
  * Indicates that all previous element types were integral.
  */
-
 
 template<typename Tuple, std::size_t I>
 struct tuple_all_integral_impl<

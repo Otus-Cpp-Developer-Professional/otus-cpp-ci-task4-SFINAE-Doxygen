@@ -25,7 +25,7 @@ template<typename T>
 typename my_enable_if<my_tuple_all_integral<T>::value>::type
 print_ip(const T& t)
 {
-    std::ostringstream ss;
-    append_tuple_dotted<0>(t, ss);
-    std::cout << ss.str() << '\n';
+    std::ostringstream os;
+    append_tuple_dotted<0>(t, os);
+    std::cout << os.str() << '\n';
 }

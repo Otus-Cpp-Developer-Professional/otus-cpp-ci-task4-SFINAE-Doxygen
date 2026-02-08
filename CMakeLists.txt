@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.14)
 set(CPACK_PACKAGE_NAME "sfinae")
 set(CPACK_PACKAGE_VENDOR "OTUS")
 set(CPACK_PACKAGE_CONTACT "sagge14@yandex.ru")
+set(CPACK_SYSTEM_NAME "Linux")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 

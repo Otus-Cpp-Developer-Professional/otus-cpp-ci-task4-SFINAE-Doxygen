@@ -37,11 +37,16 @@ jobs:
 
       - name: Run tests
         run: |
-          ctest --test-dir build
+          ctest --test-dir build --output-on-failure
 
       - name: Build deb package
         run: |
           cmake --build build --target package
+
+      # Полезно оставить — сразу видно, есть ли deb и как он называется
+      - name: Debug deb files
+        run: |
+          ls -la build
 
       - name: Generate Doxygen documentation
         run: |

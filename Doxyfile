@@ -1,6 +1,6 @@
 PROJECT_NAME = "sfinae"
 
-INPUT = .
+INPUT = include src
 RECURSIVE = YES
 
 GENERATE_HTML = YES

@@ -27,6 +27,8 @@ add_subdirectory(src)
 
 if(WITH_BOOST_TEST)
     add_subdirectory(test)
+    enable_testing()
+    add_test(NAME tests_sfinae COMMAND tests_sfinae)
 endif()
 
 include(CPack)

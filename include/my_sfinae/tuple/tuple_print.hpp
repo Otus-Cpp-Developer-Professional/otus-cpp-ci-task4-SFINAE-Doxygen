@@ -13,6 +13,7 @@
 
 #include <tuple>
 #include <sstream>
+#include "../meta/enable_if.hpp"
 
 /**
  * @brief Appends tuple elements to the stream separated by dots.
@@ -49,5 +50,3 @@ append_tuple_dotted(const Tuple& t, std::ostringstream& out)
 
     append_tuple_dotted<I + 1>(t, out);
 }
-
-

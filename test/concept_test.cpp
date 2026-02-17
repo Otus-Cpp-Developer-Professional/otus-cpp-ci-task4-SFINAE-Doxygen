@@ -1,14 +1,14 @@
-#define BOOST_TEST_MODULE sfinae_tests
+#define BOOST_TEST_MODULE concept_tests
 
 /**
- * @brief Unit tests for print_ip library
+ * @brief Unit tests for print_ip library using C++20 concepts
  *
  * This file contains Boost.Test unit tests that verify the correctness
- * of the print_ip / to_string_ip overloads for all supported types:
+ * of the print_ip / to_string_ip overloads implemented with C++20 concepts
+ * for all supported types:
  *  - integral values
  *  - strings
  *  - standard containers
- *  - tuples of integral values
  *
  * The tests focus on pure formatting logic and do not test
  * output to std::cout.
@@ -17,11 +17,12 @@
 #include <boost/test/included/unit_test.hpp>
 
 #include <string>
+#include <string_view>
 #include <vector>
 #include <list>
 #include <tuple>
 
-#include "my_sfinae/print_ip.hpp"
+#include "concepts/print_ip.hpp"
 
 // -------- integral --------
 
@@ -48,6 +49,11 @@ BOOST_AUTO_TEST_CASE(ip_int64)
     );
 }
 
+BOOST_AUTO_TEST_CASE(ip_unsigned_int)
+{
+    BOOST_TEST(to_string_ip(unsigned int{0xFFFFFFFF}) == "255.255.255.255");
+}
+
 // -------- string --------
 
 BOOST_AUTO_TEST_CASE(ip_string)
@@ -56,6 +62,12 @@ BOOST_AUTO_TEST_CASE(ip_string)
             to_string_ip(std::string{"Hello, World!"}) ==
             "Hello, World!"
     );
+}
+
+BOOST_AUTO_TEST_CASE(ip_string_view)
+{
+    std::string_view sv{"Test String"};
+    BOOST_TEST(to_string_ip(sv) == "Test String");
 }
 
 // -------- containers --------
@@ -76,6 +88,16 @@ BOOST_AUTO_TEST_CASE(ip_list)
     );
 }
 
+BOOST_AUTO_TEST_CASE(ip_vector_empty)
+{
+    BOOST_TEST(to_string_ip(std::vector<int>{}) == "");
+}
+
+BOOST_AUTO_TEST_CASE(ip_list_single_element)
+{
+    BOOST_TEST(to_string_ip(std::list<int>{42}) == "42");
+}
+
 // -------- tuple --------
 
 BOOST_AUTO_TEST_CASE(ip_tuple)
@@ -83,5 +105,21 @@ BOOST_AUTO_TEST_CASE(ip_tuple)
     BOOST_TEST(
             to_string_ip(std::make_tuple(123, 456, 789, 0)) ==
             "123.456.789.0"
+    );
+}
+
+BOOST_AUTO_TEST_CASE(ip_tuple_two_elements)
+{
+    BOOST_TEST(
+            to_string_ip(std::make_tuple(10, 20)) ==
+            "10.20"
+    );
+}
+
+BOOST_AUTO_TEST_CASE(ip_tuple_single_element)
+{
+    BOOST_TEST(
+            to_string_ip(std::make_tuple(42)) ==
+            "42"
     );
 }

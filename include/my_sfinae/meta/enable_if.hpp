@@ -10,5 +10,3 @@ struct my_enable_if<true, T> {
 
 template<bool b, typename T>
 using my_enable_if_t = typename my_enable_if<b, T>::type;
-
-
